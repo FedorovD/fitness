@@ -1,29 +1,32 @@
-<script>
-  import MyFooter from '~components/Footer.vue'
-
-  export default {
-    components: {
-      MyFooter
-    }
-  }
-</script>
-
 <template>
   <div>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <router-link to="/" class="navbar-brand">Test technique Totem</router-link>
-        </div>
-      </div>
-    </nav>
     <nuxt/>
-    <my-footer/>
+    <!-- <my-footer/> -->
   </div>
 </template>
+
+<script>
+import MyFooter from '~/components/Footer.vue'
+
+export default {
+  components: {
+    MyFooter
+  }
+}
+</script>
+
+<style>
+.container
+{
+  width: 100%;
+  padding: 100px 0;
+}
+
+.title
+{
+  color: #000;
+  font-weight: 300;
+  font-size: 2.5em;
+  margin: 0;
+}
+</style>

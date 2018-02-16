@@ -1,18 +1,35 @@
 <template>
-  <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      Universal Vue.js Application Framework
-    </h1>
-    <nuxt-link class="button" to="/search">
-      Search page
-    </nuxt-link>
-  </section>
+  <h1>home</h1>
 </template>
+
+<script>
+import axios from '~/plugins/axios'
+export default {
+  async asyncData () {
+    let { data } = await axios.get('/api/users')
+    return { users: data }
+  },
+  head () {
+    return {
+      title: 'Users'
+    }
+  }
+}
+</script>
 
 <style scoped>
 .title
 {
-  margin: 50px 0;
+  margin: 30px 0;
+}
+.users
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.user
+{
+  margin: 10px 0;
 }
 </style>
